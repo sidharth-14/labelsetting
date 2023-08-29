@@ -14,7 +14,8 @@ const headers = {
 
 const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/labels`;
 
-axios.get(apiUrl, { headers })
+axios
+  .get(apiUrl, { headers })
   .then(response => {
     const labels = response.data.map(label => ({
       name: label.name,
@@ -22,12 +23,16 @@ axios.get(apiUrl, { headers })
     }));
     console.log('Labels:', labels);
 
-    const labelIds = disc_labels.map(labelName => {
+    if (Array.isArray(disc_labels)) {
+      const labelIds = disc_labels.map(labelName => {
         const label = labels.find(labelObj => labelObj.name === labelName);
         return label ? label.id : null;
       });
-  
+
       console.log('Label IDs:', labelIds);
+    } else {
+      console.error('disc_labels is not an array');
+    }
   })
   .catch(error => {
     console.error('Error fetching labels:', error.message);
