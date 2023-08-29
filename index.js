@@ -6,7 +6,7 @@ const disc_labels = core.getInput('disc_labels');
 const repoOwner = 'rainfall-kiran';
 const repoName = 'labelsetting';
 
-const disclabels = disc_labels.replace('[','').replaceAll('"','').replace(']','')
+const disclabels = disc_labels.replace('[','').replaceAll('"','').replace(']','').replace(' ','')
 
 const infolabel = disclabels.split(',');
 
