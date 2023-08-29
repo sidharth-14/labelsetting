@@ -3,8 +3,8 @@ const axios = require('axios');
 
 const PAT = core.getInput('PAT');
 const disc_labels = core.getInput('disc_labels');
-const repoOwner = 'rainfall-kiran';
-const repoName = 'labelsetting';
+const repoOwner = 'rainfall-sidharth';
+const repoName = 'gitops-test';
 
 const disclabels = disc_labels.replace('[','').replaceAll('"','').replace(']','')
 
