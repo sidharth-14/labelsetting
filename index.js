@@ -3,11 +3,11 @@ const axios = require('axios');
 
 const repoOwner = 'rainfall-kiran';
 const repoName = 'labelsetting';
-const token = core.getInput('PAT');
+const PAT = core.getInput('PAT');
 
 const headers = {
     Accept: 'application/vnd.github.v3+json',
-    Authorization: `Bearer ${token}`
+    Authorization: `Bearer ${PAT}`
 };
 
 const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/labels`;
