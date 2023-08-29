@@ -10,6 +10,7 @@ const disclabels = disc_labels.replace('[','').replaceAll('"','').replace(']',''
 
 const infolabel = disclabels.split(',');
 
+console.log(infolabel)
 
 const headers = {
     Accept: 'application/vnd.github.v3+json',
