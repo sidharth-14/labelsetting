@@ -23,14 +23,14 @@ axios
   .then(response => {
     const labels = response.data.map(label => ({
       name: label.name,
-      id: label.id // Retrieve the label ID
+      node_id: label.node_id // Retrieve the label ID
     }));
     console.log('Labels:', labels);
 
     if (Array.isArray(infolabel)) {
       const labelIds = infolabel.map(labelName => {
         const label = labels.find(labelObj => labelObj.name === labelName);
-        return label ? label.id : null;
+        return label ? label.node_id : null;
       });
 
       console.log('Label IDs:', labelIds);
