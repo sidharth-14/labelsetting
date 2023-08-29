@@ -4,7 +4,11 @@ description: Fetches labels from a GitHub repository
 inputs:
   PAT:
     description: "GitHub repository token"
-    required: false
+    required: true
+  disc_labels:
+    description: "Discussion Labels to extract the node ID"
+    required: true
+  
 
 runs:
   using: 'node16'
