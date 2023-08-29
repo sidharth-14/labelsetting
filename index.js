@@ -34,6 +34,7 @@ axios
       });
 
       console.log('Label IDs:', labelIds);
+      core.setOutput("label_id",labelIds);
     } else {
       console.error('disc_labels is not an array');
     }
