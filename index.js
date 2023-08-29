@@ -6,6 +6,10 @@ const disc_labels = core.getInput('disc_labels');
 const repoOwner = 'rainfall-kiran';
 const repoName = 'labelsetting';
 
+const disclabels = disc_labels.replace('[','').replaceAll('"','').replace(']','')
+
+const infolabel = disclabels.split(',');
+
 
 const headers = {
     Accept: 'application/vnd.github.v3+json',
@@ -24,7 +28,7 @@ axios
     console.log('Labels:', labels);
 
     if (Array.isArray(disc_labels)) {
-      const labelIds = disc_labels.map(labelName => {
+      const labelIds = infolabel.map(labelName => {
         const label = labels.find(labelObj => labelObj.name === labelName);
         return label ? label.id : null;
       });
