@@ -27,7 +27,7 @@ axios
     }));
     console.log('Labels:', labels);
 
-    if (Array.isArray(disc_labels)) {
+    if (Array.isArray(infolabel)) {
       const labelIds = infolabel.map(labelName => {
         const label = labels.find(labelObj => labelObj.name === labelName);
         return label ? label.id : null;
